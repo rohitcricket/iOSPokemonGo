@@ -34,7 +34,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 if let coord = self.manager.location?.coordinate {
                     let anno = MKPointAnnotation()
                     anno.coordinate = coord
-                    anno.coordinate.latitude += 0.001
+    let randomLat = (Double(arc4random_uniform(200)) - 100)/50000.0
+    let randomLon = (Double(arc4random_uniform(200)) - 100)/50000.0
+                    anno.coordinate.latitude += randomLat
+                    anno.coordinate.longitude += randomLon
+                    
                     self.mapView.addAnnotation(anno)
                 }
 
@@ -54,7 +58,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if updateCount < 3 {
-            let region = MKCoordinateRegionMakeWithDistance(manager.location!.coordinate, 400, 400)
+            let region = MKCoordinateRegionMakeWithDistance(manager.location!.coordinate, 200, 200)
             mapView.setRegion(region, animated: false)
             updateCount += 1
         } else {
@@ -66,7 +70,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBAction func centerTapped(_ sender: Any) {
         
         if let coord = manager.location?.coordinate {
-            let region = MKCoordinateRegionMakeWithDistance(coord, 400, 400)
+            let region = MKCoordinateRegionMakeWithDistance(coord, 200, 200)
             mapView.setRegion(region, animated: true)
         }
 
