@@ -16,6 +16,7 @@
 		9B56A4701DC0621B005214A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B56A46F1DC0621B005214A1 /* Assets.xcassets */; };
 		9B56A4731DC0621B005214A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B56A4711DC0621B005214A1 /* LaunchScreen.storyboard */; };
 		9B56A47C1DC0633A005214A1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B56A47B1DC0633A005214A1 /* MapKit.framework */; };
+		9B9D2EFC1DCFA0D20083F7FF /* PokeAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9D2EFB1DCFA0D20083F7FF /* PokeAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		9B56A4721DC0621B005214A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B56A4741DC0621B005214A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B56A47B1DC0633A005214A1 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		9B9D2EFB1DCFA0D20083F7FF /* PokeAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				9B56A4671DC0621B005214A1 /* ViewController.swift */,
 				9B56A4691DC0621B005214A1 /* Main.storyboard */,
 				9B1DF01D1DCE8DEC0059B1EE /* PokedexViewController.swift */,
+				9B9D2EFB1DCFA0D20083F7FF /* PokeAnnotation.swift */,
 				9B56A46F1DC0621B005214A1 /* Assets.xcassets */,
 				9B56A4711DC0621B005214A1 /* LaunchScreen.storyboard */,
 				9B56A4741DC0621B005214A1 /* Info.plist */,
@@ -158,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B56A4681DC0621B005214A1 /* ViewController.swift in Sources */,
+				9B9D2EFC1DCFA0D20083F7FF /* PokeAnnotation.swift in Sources */,
 				9B1DF01E1DCE8DEC0059B1EE /* PokedexViewController.swift in Sources */,
 				9B56A46E1DC0621B005214A1 /* PokemonGoClone.xcdatamodeld in Sources */,
 				9B1DF0201DCE94050059B1EE /* CoreDataHelp.swift in Sources */,
