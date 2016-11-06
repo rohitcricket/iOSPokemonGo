@@ -17,7 +17,7 @@ func addAllPokemon(){
     createPokemon(name: "Pikachu", imageName: "pikachu")
     createPokemon(name: "Pokeball", imageName: "pokeball")
     createPokemon(name: "Potion", imageName: "potion")
-    createPokemon(name: "Player", imageName: "player")
+    createPokemon(name: "Zubat", imageName: "zubat")
     createPokemon(name: "LuckyEgg", imageName: "lucky-egg")
     
     
