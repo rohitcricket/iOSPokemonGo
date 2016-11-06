@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import CoreData
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
@@ -17,10 +18,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var updateCount = 0
     
     var manager = CLLocationManager()
+    
+    var pokemons : [Pokemon] = []
    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        pokemons = getAllPokemon()
         
         manager.delegate = self
         
@@ -76,6 +81,50 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
     }
     
+    func getAllPokemon() -> [Pokemon] {
+        
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        do {
+            let pokemons = try context.fetch(Pokemon.fetchRequest()) as! [Pokemon]
+            
+            if pokemons.count == 0 {
+                addAllPokemon()
+                return getAllPokemon()
+            }
+            return pokemons
+        } catch {
+            
+        }
+
+        return []
+    }
+    
+    func getAllCaughtPokemons() -> [Pokemon] {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        let fetchRequest = Pokemon.fetchRequest() as NSFetchRequest<Pokemon>
+        fetchRequest.predicate = NSPredicate(format: "caught == %@", true as CVarArg)
+        
+        do {
+            let pokemons = try context.fetch(fetchRequest)
+            return pokemons
+        } catch {}
+        return []
+    }
+    
+    func getAllUncaughtPokemons() -> [Pokemon] {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        let fetchRequest = Pokemon.fetchRequest() as NSFetchRequest<Pokemon>
+        fetchRequest.predicate = NSPredicate(format: "caught == %@", false as CVarArg)
+        
+        do {
+            let pokemons = try context.fetch(fetchRequest) 
+            return pokemons
+        } catch {}
+        return []
+    }
     
 
 }

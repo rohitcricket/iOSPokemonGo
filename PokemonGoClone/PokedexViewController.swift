@@ -12,9 +12,14 @@ class PokedexViewController: UIViewController {
     
     
     @IBOutlet weak var tableView: UITableView!
+    
+    var caughtPokemons : [Pokemon] = []
+    var uncaughtPokemons : [Pokemon] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
 
         // Do any additional setup after loading the view.
     }
